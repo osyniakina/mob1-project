@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mob1_project.RestMainPage"
+             Title="RestMainPage">
+    <Grid RowDefinitions="Auto,*"
+      BackgroundColor="#ff6600">
+
+        <VerticalStackLayout
+        Grid.Row="0" Padding="5, 5, 0 , 5">
+
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="8*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Image
+                    Source="pyszne.png"
+                    HeightRequest="90"
+                     Grid.Row="0" Grid.Column="0"
+                    Margin="38,0,0,0"/>
+
+                <Button
+                    x:Name="BtnWylog"
+                    Text="Wyłoguj się" 
+                    Margin="0, 60, 3, 5" 
+                    Grid.Column="1" Grid.Row="0"
+                    HorizontalOptions="End"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    BackgroundColor="White"
+                    Clicked="BtnWylog_Clicked"/>
+
+
+            </Grid>
+
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="7*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Entry x:Name="InpSzukajRest"
+                   Placeholder="Nazwa restauracji"
+                   Grid.Row="0" Grid.Column="0"
+                   TextColor="Black"
+                   Margin="5" BackgroundColor="White"
+                       />
+
+                <ImageButton x:Name="BtnSzukajRest"
+                     Source="search.png"
+                     BackgroundColor="White"
+                     Grid.Row="0" Grid.Column="1"
+                     Margin="5" 
+                     Clicked="BtnSzukajRest_Clicked"/>
+
+            </Grid>
+
+            <Grid  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    x:Name="BtnKategorie"
+                    Text="Kategorie i filtry" 
+                    Margin="0, 15, 10, 25"
+                    Grid.Column="0"
+                    HorizontalOptions="EndAndExpand"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    BackgroundColor="White"
+                    Clicked="BtnKategorie_Clicked"/>
+
+                <Button
+                    x:Name="BtnZmienMiasto"
+                    Text="Zmień miasto" 
+                    Margin="0, 15, 10, 25"
+                    Grid.Column="1"
+                    HorizontalOptions="StartAndExpand"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    BackgroundColor="White"
+                    Clicked="BtnZmienMiasto_Clicked"/>
+            </Grid>
+
+
+
+
+        </VerticalStackLayout>
+        <ScrollView x:Name="scrollView" Grid.Row="1" Margin="5, 10, 5, 10"
+                VerticalOptions="FillAndExpand" BackgroundColor="#ff6600"
+                >
+            <VerticalStackLayout x:Name="lista" />
+        </ScrollView>
+    </Grid>
+</ContentPage>

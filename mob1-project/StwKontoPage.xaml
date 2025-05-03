@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mob1_project.StwKontoPage"
+             Title="Stwórz konto">
+    <VerticalStackLayout
+    
+    BackgroundColor="#ff6600"
+    >
+        <Image
+        Source="pyszne.png"
+        HeightRequest="98"
+        Aspect="Center"
+        SemanticProperties.Description="dot net bot in a hovercraft number nine" />
+
+        <Label
+        Text="Stwórz konto"
+        Style="{StaticResource Headline}"
+        TextColor="White"
+        x:Name="Lab"
+        Margin="0, 10, 0, 0"
+        />
+
+        <Label Text="Nazwa użytkownika" 
+           FontSize="Medium"
+           TextColor="White"
+           HorizontalOptions="CenterAndExpand"
+           Padding="9,5, 0, 5"/>
+
+        <Entry x:Name="StwKontoInpUzytkownik"
+           Placeholder="Nazwa użytkownika" 
+           HorizontalOptions="CenterAndExpand"
+           BackgroundColor="White"
+           TextColor="Black"
+           WidthRequest="200"/>
+
+        <Label Text="Hasło" 
+           FontSize="Medium"
+           TextColor="White"
+           HorizontalOptions="CenterAndExpand"
+           Padding="9,5, 0, 5"/>
+
+        <Entry x:Name="StwKontoInpHaslo"
+           Placeholder="Hasło" 
+           HorizontalOptions="CenterAndExpand"
+           BackgroundColor="White"
+           TextColor="Black"
+           WidthRequest="200"
+           IsPassword="True"/>
+
+        <Label Text="Numer telefonu" 
+           FontSize="Medium"
+           TextColor="White"
+           HorizontalOptions="CenterAndExpand"
+           Padding="9,5, 0, 5"/>
+
+        <Entry x:Name="StwKontoInpTel"
+           Placeholder="Telefon +48.." 
+           HorizontalOptions="CenterAndExpand"
+           BackgroundColor="White"
+           TextColor="Black"
+           WidthRequest="200"
+           />
+
+        <Button
+        x:Name="StwBtn"
+        Text="Stwórz konto" 
+        Margin="10, 20, 0, 0"
+        Clicked="StwBtn_Clicked"
+        Focused="StwBtn_Focused"
+        Unfocused="StwBtn_Unfocused"
+        
+        HorizontalOptions="CenterAndExpand"
+        BorderColor="White"
+        FontAttributes="Bold"
+        BorderWidth="2"
+        BackgroundColor="White"/>
+
+        <Button
+        x:Name="ZalBtn"
+        Text="Załoguj się"
+        Clicked="ZalBtn_Clicked"
+        HorizontalOptions="CenterAndExpand"
+        FontAttributes="Bold"
+        Margin="13, 10, 0, 0"
+        Padding="0,0,0,0"
+        FontSize="Small"
+        TextColor="Black"
+        BackgroundColor="#ff6600"/>
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

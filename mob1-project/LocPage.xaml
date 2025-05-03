@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mob1_project.LocPage"
+             Title="LocPage">
+    <VerticalStackLayout
+        BackgroundColor="#ff6600">
+        <Image
+            Source="D:\pr_from_pulpit\mob1-project\mob1-project\Resources\Images\pyszne.png"
+            HeightRequest="100"
+            Aspect="Center"/>
+
+        <Label
+            Text="Wybierz miasto:"
+            Style="{StaticResource Headline}"
+            TextColor="White"
+            x:Name="Lab"
+            Margin="0, 25, 0, 0"
+        />
+
+        <Button
+            x:Name="Warszawa"
+            StyleId="Warszawa"
+            StyleClass="Miasto"
+            Text="Warszawa" 
+            Margin="15, 20, 0, 15"
+            SemanticProperties.Hint="Counts the number of times you click"
+            Clicked="LocMiasto_Clicked"
+            Focused="LocMiasto_Focused"
+   
+            HorizontalOptions="CenterAndExpand"
+            BorderColor="White"
+            FontAttributes="Bold"
+            BorderWidth="2"
+            TextColor="Black"
+            BackgroundColor="White"/>
+
+        <Button
+            x:Name="Bialystok"
+            StyleId="Bialystok"
+            StyleClass="Miasto"
+            Text="Białystok" 
+            Margin="15, 20, 0, 15"
+            SemanticProperties.Hint="Counts the number of times you click"
+            Clicked="LocMiasto_Clicked"
+            Focused="LocMiasto_Focused"
+    
+            HorizontalOptions="CenterAndExpand"
+            BorderColor="White"
+            FontAttributes="Bold"
+            BorderWidth="2"
+            TextColor="Black"
+            BackgroundColor="White"/>
+
+        <Button
+            x:Name="Lublin"
+            StyleId="Lublin"
+            StyleClass="Miasto"
+            Text="Lublin" 
+            Margin="15, 20, 0, 15"
+            SemanticProperties.Hint="Counts the number of times you click"
+            Clicked="LocMiasto_Clicked"
+            Focused="LocMiasto_Focused"
+    
+            HorizontalOptions="CenterAndExpand"
+            BorderColor="White"
+            FontAttributes="Bold"
+            BorderWidth="2"
+            TextColor="Black"
+            BackgroundColor="White"/>
+
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mob1_project.AdminPage"
+             Title="AdminPage">
+    <StackLayout Padding="20">
+        <Label Text="Lista kont użytkowników:" FontAttributes="Bold" FontSize="20" />
+
+        <CollectionView x:Name="UsersListView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="Gray" Margin="5" Padding="10" CornerRadius="10">
+                        <StackLayout>
+                            <Label Text="{Binding Nazwa}" FontSize="18" />
+                            <Label Text="{Binding Haslo}" FontSize="14" TextColor="Gray" />
+                            <Label Text="{Binding Telefon}" FontSize="14" TextColor="Gray" />
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        
+        <Label Text="Lista restauracji:" FontAttributes="Bold" FontSize="20" />
+
+        <CollectionView x:Name="RestsListView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="Gray" Margin="5" Padding="10" CornerRadius="10">
+                        <StackLayout>
+                            <Label Text="{Binding Nazwa}" FontSize="18" />
+                            <Label Text="{Binding Miasto}" FontSize="14" TextColor="Gray" />
+                            <Label Text="{Binding CzasPracy}" FontSize="14" TextColor="Gray" />
+                            <Label Text="{Binding KosztDostawy}" FontSize="14" TextColor="Gray" />
+                            <Label Text="{Binding CzasDostawy}" FontSize="14" TextColor="Gray" />
+                            <Label Text="{Binding Kategoria}" FontSize="14" TextColor="Gray" />
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
