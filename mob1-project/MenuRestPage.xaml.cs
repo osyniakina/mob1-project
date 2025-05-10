@@ -5,6 +5,7 @@ public partial class MenuRestPage : ContentPage
     private DBHelper _databaseHelper;
     private Restauracja _rest;
     private Dictionary<int, int> ilosciWybranych = new Dictionary<int, int>();   // przechowuje: id_dania, ilość
+    public float koszykCena = 0f;
     private readonly Dictionary<int, string> nazwyKategorii = new()
     {
         { 1, "Dania główne" },
@@ -23,6 +24,7 @@ public partial class MenuRestPage : ContentPage
         _databaseHelper = new DBHelper();
         _ = _databaseHelper.AddSampleRestauracjeAsync();
 
+        koszykButton.Text = "Prszejdz do koszyka: "+koszykCena.ToString()+" zł";
         nazwaLabel.Text = _rest.Nazwa+"  "+_rest.CzasPracy;
         LoadMenu();
     }
@@ -113,6 +115,8 @@ public partial class MenuRestPage : ContentPage
                     if (ilosciWybranych[danie.Id] > 0)
                     {
                         ilosciWybranych[danie.Id]--;
+                        koszykCena -= (float)danie.Cena;
+                        koszykButton.Text = "Prszejdz do koszyka: " + koszykCena.ToString() + " zł";
                         labelIlosc.Text = ilosciWybranych[danie.Id].ToString();
                     }
                 };
@@ -131,6 +135,8 @@ public partial class MenuRestPage : ContentPage
                 buttonPlus.Clicked += (s, e) =>
                 {
                     ilosciWybranych[danie.Id]++;
+                    koszykCena += (float)danie.Cena;
+                    koszykButton.Text = "Prszejdz do koszyka: " + koszykCena.ToString() + " zł";
                     labelIlosc.Text = ilosciWybranych[danie.Id].ToString();
                 };
 
@@ -159,5 +165,10 @@ public partial class MenuRestPage : ContentPage
     private async void BtnWrocMenu_Clicked(object sender, EventArgs e)
     {
         await Navigation.PopAsync();
+    }
+
+    private async void koszykButton_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new KoszykMainPage());
     }
 }
