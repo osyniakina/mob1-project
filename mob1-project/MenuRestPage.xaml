@@ -4,7 +4,7 @@
              x:Class="mob1_project.MenuRestPage"
              Title="MenuRestPage"
              >
-    <Grid RowDefinitions="Auto,*"
+    <Grid RowDefinitions="Auto,*, Auto"
     BackgroundColor="#ff6600">
         <VerticalStackLayout>
             <Grid ColumnDefinitions="1*,6*">
@@ -29,5 +29,16 @@
         >
             <VerticalStackLayout x:Name="menu" />
         </ScrollView>
+        <VerticalStackLayout Grid.Row="2" Padding="2, 4, 2, 8">
+            <Button  x:Name="koszykButton"
+            Text="Przejdz do koszyka: 0 zł"
+            VerticalOptions="Start"
+            Clicked="koszykButton_Clicked"
+            TextColor="White"
+            FontSize="Large"
+            BackgroundColor="#39962a"
+            FontAttributes="Bold"
+            HorizontalOptions="Fill" />
+        </VerticalStackLayout>
     </Grid>
 </ContentPage>
