@@ -27,7 +27,7 @@
 
                 <Button
                     x:Name="BtnWylog"
-                    Text="Wyłoguj się" 
+                    Text="Wyloguj się" 
                     Margin="0, 60, 3, 5" 
                     Grid.Column="1" Grid.Row="0"
                     HorizontalOptions="End"

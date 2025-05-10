@@ -74,11 +74,13 @@
         BorderColor="White"
         FontAttributes="Bold"
         BorderWidth="2"
-        BackgroundColor="White"/>
+        BackgroundColor="White"
+        TextColor="Black"
+        />
 
         <Button
         x:Name="ZalBtn"
-        Text="Załoguj się"
+        Text="Zaloguj się"
         Clicked="ZalBtn_Clicked"
         HorizontalOptions="CenterAndExpand"
         FontAttributes="Bold"

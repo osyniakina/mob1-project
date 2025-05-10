@@ -11,7 +11,7 @@
             Aspect="Center"/>
 
         <Label
-            Text="Wybierz miasto:"
+            Text="Wybierz swoje miasto:"
             Style="{StaticResource Headline}"
             TextColor="White"
             x:Name="Lab"

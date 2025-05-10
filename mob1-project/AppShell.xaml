@@ -8,7 +8,7 @@
     Title="mob1_project">
 
     <ShellContent
-        Title="Załoguj się"
+        Title="Zaloguj się"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
     <ShellContent

@@ -1,82 +1,73 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="mob1_project.MainPage">
+             x:Class="mob1_project.MainPage"
+             BackgroundColor="#F4FAFF">
 
-    <ScrollView>
-        <VerticalStackLayout
-            
-            BackgroundColor="#ff6600"
-            >
+    <Grid RowDefinitions="*, Auto">
+
+        <VerticalStackLayout Grid.Row="0"
+                             Padding="30,0,30,0"
+                             HorizontalOptions="Center">
             <Image
-                Source="pyszne.png"
-                HeightRequest="100"
-                Aspect="Center"
-                SemanticProperties.Description="dot net bot in a hovercraft number nine" />
+                Source="smaczne.png"
+                HeightRequest="350"
+                Aspect="AspectFit"
+                SemanticProperties.Description="Logo aplikacji" />
 
             <Label
-                Text="Załoguj się"
-                Style="{StaticResource Headline}"
-                TextColor="White"
-                x:Name="Lab"
-                Margin="0, 25, 0, 0"
-                />
-            
-            <Label Text="Nazwa użytkownika" 
-                   FontSize="Medium"
-                   TextColor="White"
-                   HorizontalOptions="CenterAndExpand"
-                   Padding="9,10, 0, 10"/>
-
-            <Entry x:Name="ZalogInpUzytkownik"
-                   Placeholder="Nazwa użytkownika" 
-                   HorizontalOptions="CenterAndExpand"
-                   BackgroundColor="White"
-                   TextColor="Black"
-                   WidthRequest="200"/>
-
-            <Label Text="Hasło" 
-                   FontSize="Medium"
-                   TextColor="White"
-                   HorizontalOptions="CenterAndExpand"
-                   Padding="9,10, 0, 10"/>
-
-            <Entry x:Name="ZalogInpHaslo"
-                   Placeholder="Hasło" 
-                   HorizontalOptions="CenterAndExpand"
-                   BackgroundColor="White"
-                   TextColor="Black"
-                   WidthRequest="200"
-                   IsPassword="True"/>
-
-            <Button
-                x:Name="ZalogBtn"
-                Text="Załoguj się" 
-                Margin="15, 20, 0, 15"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="ZalogBtnClicked"
-                
-                TextColor="Black"
-                HorizontalOptions="CenterAndExpand"
-                BorderColor="Black"
+                Text="Wybierz, zamów, delektuj się, a my zajmiemy się wszystkim"
+                FontSize="30"
+                FontFamily="Pacifico-Regular"
                 FontAttributes="Bold"
-                BorderWidth="2"
-                BackgroundColor="White"/>
-
-            <Button
-                x:Name="UtwKontBtn"
-                Text="Stwórz konto"
-                Clicked="UtwKontBtn_Clicked"
-                HorizontalOptions="CenterAndExpand"
-                FontAttributes="Bold"
-                Margin="15, 0, 0, 0"
-                FontSize="Small"
-                TextColor="Black"
-                BackgroundColor="#ff6600"/>
-
-            
-
+                TextColor="#494744"
+                HorizontalOptions="Center"
+                Margin="50,0,50,0" />
         </VerticalStackLayout>
-    </ScrollView>
 
+        <Frame Grid.Row="1"
+               BackgroundColor="#F0FFF1"
+               CornerRadius="25"
+               Padding="50"
+               VerticalOptions="End"
+               Margin="0,0,0,-10"
+               HasShadow="True">
+            <VerticalStackLayout Spacing="20">
+                <Frame Style="{StaticResource InputFrame}">
+                    <Entry x:Name="ZalogInpUzytkownik"
+                           Placeholder="Login"
+                           TextColor="#333333"
+                           PlaceholderColor="#999999" />
+                </Frame>
+
+                <Frame Style="{StaticResource InputFrame}">
+                    <Entry x:Name="ZalogInpHaslo"
+                           Placeholder="Hasło"
+                           IsPassword="True"
+                           TextColor="#333333"
+                           PlaceholderColor="#999999" />
+                </Frame>
+
+                <Button x:Name="ZalogBtn"
+                        Text="Zaloguj"
+                        Clicked="ZalogBtnClicked"
+                        BackgroundColor="#506b4d"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="10"
+                        Padding="15"
+                        FontSize="18" />
+
+                <Button x:Name="UtwKontBtn"
+                        Text="Stwórz konto"
+                        Clicked="UtwKontBtn_Clicked"
+                        TextColor="#506b4d"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="Center"
+                        FontSize="Small" />
+
+
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
 </ContentPage>
