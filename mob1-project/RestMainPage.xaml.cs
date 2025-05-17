@@ -174,9 +174,9 @@ public partial class RestMainPage : ContentPage
         // Obsługa wyszukiwania
     }
 
-    private void BtnKategorie_Clicked(object sender, EventArgs e)
+    private async void BtnKategorie_Clicked(object sender, EventArgs e)
     {
-        // Obsługa kategorii
+        Navigation.PushAsync(new KategoriePage());
     }
 
     private void BtnZmienMiasto_Clicked(object sender, EventArgs e)
