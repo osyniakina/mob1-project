@@ -22,10 +22,10 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="100px" />
-                    <RowDefinition Height="100px" />
-                    <RowDefinition Height="100px" />
-                    <RowDefinition Height="100px" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <ImageButton x:Name="BtnKatAmerykanska"
                  Source="rest.jpg"
