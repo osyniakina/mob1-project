@@ -14,6 +14,7 @@ namespace mob1_project
         public MainPage()
         {
             InitializeComponent();
+
             _databaseHelper = new DBHelper();
             _ = _databaseHelper.AddSampleRestauracjeAsync();
         }
