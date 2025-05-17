@@ -2,106 +2,77 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="mob1_project.RestMainPage"
-             Title="RestMainPage">
-    <Grid RowDefinitions="Auto,*"
-      BackgroundColor="#ff6600">
+             Title="Restauracje"
+             BackgroundColor="#F5F5F5"> <Grid RowDefinitions="Auto, Auto, Auto, *">
+        <Grid Grid.Row="0"
+              BackgroundColor="#FFA500" Padding="15, 10, 15, 10"> <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/> <ColumnDefinition Width="Auto"/> </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/> </Grid.RowDefinitions>
 
-        <VerticalStackLayout
-        Grid.Row="0" Padding="5, 5, 0 , 5">
+            <Image Grid.Column="0"
+                   Source="smaczipozio1.png"
+                   HeightRequest="50" HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   Margin="0"/>
 
-
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="8*" />
-                    <ColumnDefinition Width="3*" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-
-                <Image
-                    Source="pyszne.png"
-                    HeightRequest="90"
-                     Grid.Row="0" Grid.Column="0"
-                    Margin="38,0,0,0"/>
-
-                <Button
-                    x:Name="BtnWylog"
-                    Text="Wyloguj się" 
-                    Margin="0, 60, 3, 5" 
-                    Grid.Column="1" Grid.Row="0"
-                    HorizontalOptions="End"
-                    TextColor="Black"
-                    FontAttributes="Bold"
-                    BackgroundColor="White"
-                    Clicked="BtnWylog_Clicked"/>
-
-
-            </Grid>
-
-
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="7*" />
-                    <ColumnDefinition Width="1*" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-
-                <Entry x:Name="InpSzukajRest"
-                   Placeholder="Nazwa restauracji"
-                   Grid.Row="0" Grid.Column="0"
-                   TextColor="Black"
-                   Margin="5" BackgroundColor="White"
-                       />
-
-                <ImageButton x:Name="BtnSzukajRest"
-                     Source="search.png"
-                     BackgroundColor="White"
-                     Grid.Row="0" Grid.Column="1"
-                     Margin="5" 
-                     Clicked="BtnSzukajRest_Clicked"/>
-
-            </Grid>
-
-            <Grid  >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="1*" />
-                </Grid.ColumnDefinitions>
-
-                <Button
-                    x:Name="BtnKategorie"
-                    Text="Kategorie i filtry" 
-                    Margin="0, 15, 10, 25"
-                    Grid.Column="0"
-                    HorizontalOptions="EndAndExpand"
-                    TextColor="Black"
-                    FontAttributes="Bold"
-                    BackgroundColor="White"
-                    Clicked="BtnKategorie_Clicked"/>
-
-                <Button
-                    x:Name="BtnZmienMiasto"
-                    Text="Zmień miasto" 
-                    Margin="0, 15, 10, 25"
+            <Button x:Name="BtnWylog"
                     Grid.Column="1"
-                    HorizontalOptions="StartAndExpand"
+                    Text="Wyloguj" BackgroundColor="White"
                     TextColor="Black"
                     FontAttributes="Bold"
-                    BackgroundColor="White"
-                    Clicked="BtnZmienMiasto_Clicked"/>
+                    CornerRadius="10" HeightRequest="40"
+                    WidthRequest="80"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    Clicked="BtnWylog_Clicked"/>
+        </Grid>
+
+        <Border Grid.Row="1"
+                StrokeShape="RoundRectangle 10" Stroke="Transparent" BackgroundColor="White"
+                Padding="0"
+                Margin="15, 15, 15, 0" HeightRequest="50"> <Grid ColumnDefinitions="*, Auto">
+                <Entry x:Name="InpSzukajRest"
+                       Grid.Column="0"
+                       Placeholder="Wyszukaj restaurację..."
+                       TextColor="Black"
+                       PlaceholderColor="Gray"
+                       Margin="10,0,0,0"
+                       VerticalOptions="Center"
+                       ClearButtonVisibility="WhileEditing"/> <ImageButton x:Name="BtnSzukajRest"
+                             Grid.Column="1"
+                             Source="search.png"
+                             BackgroundColor="Transparent"
+                             WidthRequest="30"
+                             HeightRequest="30"
+                             Margin="0,0,10,0"
+                             VerticalOptions="Center"
+                             Clicked="BtnSzukajRest_Clicked"/>
             </Grid>
+        </Border>
 
+        <HorizontalStackLayout Grid.Row="2"
+                               Spacing="10" Margin="15, 10, 15, 15" HorizontalOptions="FillAndExpand">
+            <Button x:Name="BtnKategorie"
+                    Text="Kategorie i filtry"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="50"
+                    Clicked="BtnKategorie_Clicked"/>
+            <Button x:Name="BtnZmienMiasto"
+                    Text="Zmień miasto"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="50"
+                    Clicked="BtnZmienMiasto_Clicked"/>
+        </HorizontalStackLayout>
 
-
-
-        </VerticalStackLayout>
-        <ScrollView x:Name="scrollView" Grid.Row="1" Margin="5, 10, 5, 10"
-                VerticalOptions="FillAndExpand" BackgroundColor="#ff6600"
-                >
-            <VerticalStackLayout x:Name="lista" />
+        <ScrollView x:Name="scrollView" Grid.Row="3"
+                    VerticalOptions="FillAndExpand"
+                    BackgroundColor="#F5F5F5"> <VerticalStackLayout x:Name="lista"
+                                 Spacing="10"       Padding="10, 0, 10, 0"> </VerticalStackLayout>
         </ScrollView>
     </Grid>
 </ContentPage>

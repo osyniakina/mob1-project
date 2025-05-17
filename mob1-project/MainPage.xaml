@@ -16,7 +16,7 @@
                 SemanticProperties.Description="Logo aplikacji" />
 
             <Label
-                Text="Wybierz, zamów, delektuj się, a my zajmiemy się wszystkim"
+                Text="Wybierz, zamów, delektuj się, a my zajmiemy się wszystkim."
                 FontSize="30"
                 FontFamily="Pacifico-Regular"
                 FontAttributes="Bold"
