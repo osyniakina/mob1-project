@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mob1_project.KategoriePage"
+             Title="KategoriePage">
+    <VerticalStackLayout>
+        <Label 
+            Text="Wybierz kategorie:"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        
+    </VerticalStackLayout>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ImageButton x:Name="BtnKatAmerykanska"
+                     Source="rest.jpg"
+                     BackgroundColor="White"
+                     Grid.Row="0" Grid.Column="0"
+                     Margin="5" 
+                     Clicked="BtnKatAmerykanska_Clicked" />
+
+        <ImageButton x:Name="BtnKatWloska"
+             Source="rest.jpg"
+             BackgroundColor="White"
+             Grid.Row="0" Grid.Column="0"
+             Margin="5" 
+             Clicked="BtnKatWloska_Clicked" />
+
+        <ImageButton x:Name="BtnKatAzjatycka"
+             Source="rest.jpg"
+             BackgroundColor="White"
+             Grid.Row="1" Grid.Column="0"
+             Margin="5" 
+             Clicked="BtnKatAzjatycka_Clicked" />
+
+        <ImageButton x:Name="BtnKatEuropejska"
+             Source="rest.jpg"
+             BackgroundColor="White"
+             Grid.Row="2" Grid.Column="0"
+             Margin="5" 
+             Clicked="BtnKatEuropejska_Clicked" />
+
+
+    </Grid>
+
+</ContentPage>

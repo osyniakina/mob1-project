@@ -138,9 +138,9 @@ public partial class RestMainPage : ContentPage
 
     }
 
-    private void BtnKategorie_Clicked(object sender, EventArgs e)
+    private async void BtnKategorie_Clicked(object sender, EventArgs e)
     {
-
+        await Navigation.PushAsync(new KategoriePage());
     }
 
     private void BtnZmienMiasto_Clicked(object sender, EventArgs e)
