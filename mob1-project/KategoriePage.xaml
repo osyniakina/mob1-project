@@ -3,63 +3,123 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="mob1_project.KategoriePage"
              Title="KategoriePage">
-    <Grid RowDefinitions="Auto,*"
-  BackgroundColor="#ff6600">
-        <VerticalStackLayout Grid.Row="0" Padding="5, 5, 0 , 5">
-            <Label 
-            Text="Wybierz kategorie:"
-            VerticalOptions="Center" 
-            FontFamily="Pacifico-Regular"
-            FontAttributes="Bold"
-            FontSize="Large"
-            HorizontalOptions="Center" />
+    <Grid RowDefinitions="Auto,*">
 
-        </VerticalStackLayout>
-        <ScrollView Grid.Row="1" Margin="5, 10, 5, 10"
-                VerticalOptions="Center" >
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <ImageButton x:Name="BtnKatAmerykanska"
-                 Source="rest.jpg"
-                 BackgroundColor="White"
-                 Grid.Row="0" Grid.Column="0"
-                 Margin="5"   
-                 Clicked="BtnKatAmerykanska_Clicked" />
+        <Grid Grid.Row="0" BackgroundColor="#5e35b1" Padding="15">
+            <Label
+                Text="Wybierz kategorię:"
+                VerticalOptions="Center"
+                FontFamily="Pacifico-Regular"
+                FontAttributes="Bold"
+                FontSize="Large"
+                HorizontalOptions="Center"
+                TextColor="#ffffff"/>
+        </Grid>
 
-                <ImageButton x:Name="BtnKatWloska"
-                 Source="rest.jpg"
-                 BackgroundColor="White"
-                 Grid.Row="1" Grid.Column="0"
-                 Margin="5" 
-                 Clicked="BtnKatWloska_Clicked" />
+        <ScrollView Grid.Row="1" BackgroundColor="#ede7f6">
+            <VerticalStackLayout Spacing="15" Padding="15">
 
-                 <ImageButton x:Name="BtnKatAzjatycka"
-                 Source="rest.jpg"
-                 BackgroundColor="White"
-                 Grid.Row="2" Grid.Column="0"
-                 Margin="5" 
-                 Clicked="BtnKatAzjatycka_Clicked" />
+                <Frame CornerRadius="15"
+                       HasShadow="True"
+                       Padding="0"
+                       Margin="10,0,10,0"
+                       BackgroundColor="White"
+                       BorderColor="#E0E0E0"
+                       HorizontalOptions="Fill">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BtnKatAmerykanska_Clicked"/>
+                    </Frame.GestureRecognizers>
+                    <StackLayout>
+                        <Image Source="bialystok.jpg"
+                               Aspect="AspectFill"
+                               HeightRequest="420"
+                               WidthRequest="500"
+                               Margin="0,25,0,0"/>
+                        <Label Text="Amerykańska"
+                               FontSize="Medium"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"
+                               TextColor="Black"
+                               Padding="10"/>
+                    </StackLayout>
+                </Frame>
 
-                 <ImageButton x:Name="BtnKatEuropejska"
-                 Source="rest.jpg"
-                 BackgroundColor="White"
-                 Grid.Row="3" Grid.Column="0"
-                 Margin="5" 
-                 Clicked="BtnKatEuropejska_Clicked" />
+                <Frame CornerRadius="15"
+                       HasShadow="True"
+                       Padding="0"
+                       Margin="10,0,10,0"
+                       BackgroundColor="White"
+                       BorderColor="#E0E0E0"
+                       HorizontalOptions="Fill">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BtnKatWloska_Clicked"/>
+                    </Frame.GestureRecognizers>
+                    <StackLayout>
+                        <Image Source="bialystok.jpg"
+                               Aspect="AspectFill"
+                               HeightRequest="420"
+                               WidthRequest="500"
+                               Margin="0,25,0,0"/>
+                        <Label Text="Włoska"
+                               FontSize="Medium"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"
+                               TextColor="Black"
+                               Padding="10"/>
+                    </StackLayout>
+                </Frame>
 
+                <Frame CornerRadius="15"
+                       HasShadow="True"
+                       Padding="0"
+                       Margin="10,0,10,0"
+                       BackgroundColor="White"
+                       BorderColor="#E0E0E0"
+                       HorizontalOptions="Fill">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BtnKatAzjatycka_Clicked"/>
+                    </Frame.GestureRecognizers>
+                    <StackLayout>
+                        <Image Source="bialystok.jpg"
+                               Aspect="AspectFill"
+                               HeightRequest="420"
+                               WidthRequest="500"
+                               Margin="0,25,0,0"/>
+                        <Label Text="Azjatycka"
+                               FontSize="Medium"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"
+                               TextColor="Black"
+                               Padding="10"/>
+                    </StackLayout>
+                </Frame>
 
-            </Grid>
+                <Frame CornerRadius="15"
+                       HasShadow="True"
+                       Padding="0"
+                       Margin="10,0,10,0"
+                       BackgroundColor="White"
+                       BorderColor="#E0E0E0"
+                       HorizontalOptions="Fill">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BtnKatEuropejska_Clicked"/>
+                    </Frame.GestureRecognizers>
+                    <StackLayout>
+                        <Image Source="bialystok.jpg"
+                               Aspect="AspectFill"
+                               HeightRequest="420"
+                               WidthRequest="500"
+                               Margin="0,25,0,0"/>
+                        <Label Text="Europejska"
+                               FontSize="Medium"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"
+                               TextColor="Black"
+                               Padding="10"/>
+                    </StackLayout>
+                </Frame>
+
+            </VerticalStackLayout>
         </ScrollView>
     </Grid>
-    
-    
-
 </ContentPage>
