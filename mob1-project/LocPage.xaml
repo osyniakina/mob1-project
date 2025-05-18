@@ -2,72 +2,98 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="mob1_project.LocPage"
-             Title="LocPage">
-    <VerticalStackLayout
-        BackgroundColor="#ff6600">
-        <Image
-            Source="D:\pr_from_pulpit\mob1-project\mob1-project\Resources\Images\pyszne.png"
-            HeightRequest="100"
-            Aspect="Center"/>
+             Title="Wybierz swoje miasto">
+    <ScrollView BackgroundColor="#ff6600">
+        <VerticalStackLayout Spacing="15" Padding="15">
+            <Image
+                Source="smaczipozio1.png"
+                HeightRequest="100"
+                Aspect="AspectFit"
+                HorizontalOptions="Center"
+                Margin="0,0,0,10"/>
 
-        <Label
-            Text="Wybierz swoje miasto:"
-            Style="{StaticResource Headline}"
-            TextColor="White"
-            x:Name="Lab"
-            Margin="0, 25, 0, 0"
-        />
+            <Label
+                Text="Wybierz swoje miasto:"
+                Style="{StaticResource Headline}"
+                TextColor="White"
+                x:Name="Lab"
+                HorizontalOptions="Center"
+                Margin="0,0,0,15"
+                FontSize="Large"
+                FontAttributes="Bold"/>
 
-        <Button
-            x:Name="Warszawa"
-            StyleId="Warszawa"
-            StyleClass="Miasto"
-            Text="Warszawa" 
-            Margin="15, 20, 0, 15"
-            SemanticProperties.Hint="Counts the number of times you click"
-            Clicked="LocMiasto_Clicked"
-            Focused="LocMiasto_Focused"
-   
-            HorizontalOptions="CenterAndExpand"
-            BorderColor="White"
-            FontAttributes="Bold"
-            BorderWidth="2"
-            TextColor="Black"
-            BackgroundColor="White"/>
+            <Frame CornerRadius="15"
+                   HasShadow="True"
+                   Padding="0"
+                   Margin="20,0,20,0"
+                   BackgroundColor="White"
+                   BorderColor="Gray"
+                   HorizontalOptions="Fill">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="LocMiasto_Clicked" CommandParameter="Warszawa"/>
+                </Frame.GestureRecognizers>
+                <StackLayout>
+                    <Image Source="warszawa.jpg" Aspect="AspectFill"
+                           HeightRequest="200"
+                           HorizontalOptions="Fill"
+                           VerticalOptions="Start"/>
+                    <Label Text="Warszawa"
+                           FontSize="Medium"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           TextColor="Black"
+                           Padding="10"/>
+                </StackLayout>
+            </Frame>
 
-        <Button
-            x:Name="Bialystok"
-            StyleId="Bialystok"
-            StyleClass="Miasto"
-            Text="Białystok" 
-            Margin="15, 20, 0, 15"
-            SemanticProperties.Hint="Counts the number of times you click"
-            Clicked="LocMiasto_Clicked"
-            Focused="LocMiasto_Focused"
-    
-            HorizontalOptions="CenterAndExpand"
-            BorderColor="White"
-            FontAttributes="Bold"
-            BorderWidth="2"
-            TextColor="Black"
-            BackgroundColor="White"/>
+            <Frame CornerRadius="15"
+                   HasShadow="True"
+                   Padding="0"
+                   Margin="20,0,20,0"
+                   BackgroundColor="White"
+                   BorderColor="Gray"
+                   HorizontalOptions="Fill">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="LocMiasto_Clicked" CommandParameter="Bialystok"/>
+                </Frame.GestureRecognizers>
+                <StackLayout>
+                    <Image Source="bialystok.jpg" Aspect="AspectFill"
+                           HeightRequest="200"
+                           HorizontalOptions="Fill"
+                           VerticalOptions="Start"/>
+                    <Label Text="Białystok"
+                           FontSize="Medium"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           TextColor="Black"
+                           Padding="10"/>
+                </StackLayout>
+            </Frame>
 
-        <Button
-            x:Name="Lublin"
-            StyleId="Lublin"
-            StyleClass="Miasto"
-            Text="Lublin" 
-            Margin="15, 20, 0, 15"
-            SemanticProperties.Hint="Counts the number of times you click"
-            Clicked="LocMiasto_Clicked"
-            Focused="LocMiasto_Focused"
-    
-            HorizontalOptions="CenterAndExpand"
-            BorderColor="White"
-            FontAttributes="Bold"
-            BorderWidth="2"
-            TextColor="Black"
-            BackgroundColor="White"/>
+            <Frame CornerRadius="15"
+                   HasShadow="True"
+                   Padding="0"
+                   Margin="20,0,20,20"
+                   BackgroundColor="White"
+                   BorderColor="Gray"
+                   HorizontalOptions="Fill">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="LocMiasto_Clicked" CommandParameter="Lublin"/>
+                </Frame.GestureRecognizers>
+                <StackLayout>
+                    <Image Source="lublin.jpg" Aspect="AspectFill"
+                           HeightRequest="200"
+                           HorizontalOptions="Fill"
+                           VerticalOptions="Start"/>
+                    <Label Text="Lublin"
+                           FontSize="Medium"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           TextColor="Black"
+                           Padding="10"/>
+                </StackLayout>
+            </Frame>
 
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

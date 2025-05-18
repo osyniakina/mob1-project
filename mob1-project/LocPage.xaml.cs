@@ -1,20 +1,30 @@
+using Microsoft.Maui.Controls;
+using System;
+using System.Linq;
+
 namespace mob1_project;
 
 public partial class LocPage : ContentPage
 {
     public string miasto = "";
     public int miastoid = 0;
-	public LocPage()
-	{
-
-		InitializeComponent();
-	}
+    public LocPage()
+    {
+        InitializeComponent();
+    }
 
     public async void LocMiasto_Clicked(object sender, EventArgs e)
     {
-        if (sender is Button clickedButton)
+        string wybraneMiasto = null;
+
+        if (sender is Frame frame && frame.GestureRecognizers.FirstOrDefault() is TapGestureRecognizer recognizer)
         {
-            miasto = clickedButton.StyleId;
+            wybraneMiasto = recognizer.CommandParameter as string;
+        }
+
+        if (!string.IsNullOrEmpty(wybraneMiasto))
+        {
+            miasto = wybraneMiasto; // Ustawiamy w³aœciwoœæ miasto
 
             if (miasto == "Warszawa")
             {
@@ -35,16 +45,17 @@ public partial class LocPage : ContentPage
             {
                 miastoid = 0;
             }
-
         }
     }
 
-    private void LocMiasto_Focused(object sender, EventArgs e)
-    {
-        if (sender is Button focusedButton)
-        {
-            focusedButton.TextColor = Colors.Black;
-            focusedButton.BackgroundColor = Colors.White;
-        }
-    }
+    // Metoda LocMiasto_Focused nie jest ju¿ wywo³ywana przez Frame z TapGestureRecognizer,
+    // wiêc mo¿esz j¹ usun¹æ, chyba ¿e masz inne elementy, które jej u¿ywaj¹.
+    // private void LocMiasto_Focused(object sender, EventArgs e)
+    // {
+    //     if (sender is Button focusedButton)
+    //     {
+    //         focusedButton.TextColor = Colors.Black;
+    //         focusedButton.BackgroundColor = Colors.White;
+    //     }
+    // }
 }
