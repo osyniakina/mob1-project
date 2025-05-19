@@ -9,8 +9,8 @@ public partial class RestMainPage : ContentPage
 {
     private DBHelper _databaseHelper;
     private string miasto;
+    private string kategoria;
 
-    // Wewnętrzna klasa konwertera (możesz też przenieść ją do osobnego pliku)
     public class CategoryToImageConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
@@ -28,17 +28,22 @@ public partial class RestMainPage : ContentPage
         }
     }
 
-    public RestMainPage(string Wybmiasto)
+    public RestMainPage(string Wybmiasto) : this(Wybmiasto, null)
+    {
+    }
+
+    public RestMainPage(string Wybmiasto, string wybranaKategoria)
     {
         InitializeComponent();
         _databaseHelper = new DBHelper();
 
-        // Upewnij się, że logika dodawania danych jest odpowiednia dla Twojej aplikacji
+        miasto = Wybmiasto;
+        kategoria = wybranaKategoria;
+
         _ = _databaseHelper.AddSampleRestauracjeAsync();
         _ = _databaseHelper.AddRestauracje2Async();
         _ = _databaseHelper.AddDaniaAsync();
 
-        miasto = Wybmiasto;
         LoadRestaurants();
     }
 
@@ -53,8 +58,14 @@ public partial class RestMainPage : ContentPage
         var restaurants = await _databaseHelper.GetRestAsync();
 
         var filtrowane = restaurants
-            .Where(r => string.Equals(r.Miasto, miasto, StringComparison.OrdinalIgnoreCase))
-            .ToList();
+    .Where(r => string.Equals(r.Miasto, miasto, StringComparison.OrdinalIgnoreCase));
+
+        if (!string.IsNullOrEmpty(kategoria))
+        {
+            filtrowane = filtrowane.Where(r => string.Equals(r.Kategoria, kategoria, StringComparison.OrdinalIgnoreCase));
+        }
+
+        var listaFinalna = filtrowane.ToList();
 
         lista.Children.Clear();
 

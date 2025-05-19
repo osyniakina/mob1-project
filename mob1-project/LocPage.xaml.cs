@@ -7,7 +7,6 @@ namespace mob1_project;
 public partial class LocPage : ContentPage
 {
     public string miasto = "";
-    public int miastoid = 0;
     public LocPage()
     {
         InitializeComponent();
@@ -24,30 +23,10 @@ public partial class LocPage : ContentPage
 
         if (!string.IsNullOrEmpty(wybraneMiasto))
         {
-            miasto = wybraneMiasto; // Ustawiamy w³aœciwoœæ miasto
-
-            if (miasto == "Warszawa")
-            {
-                miastoid = 1;
-                await Navigation.PushAsync(new RestMainPage(miasto));
-            }
-            else if (miasto == "Bialystok")
-            {
-                miastoid = 2;
-                await Navigation.PushAsync(new RestMainPage(miasto));
-            }
-            else if (miasto == "Lublin")
-            {
-                miastoid = 3;
-                await Navigation.PushAsync(new RestMainPage(miasto));
-            }
-            else
-            {
-                miastoid = 0;
-            }
+            Preferences.Set("Miasto", wybraneMiasto); 
+            await Navigation.PushAsync(new RestMainPage(wybraneMiasto));
         }
     }
-
     // Metoda LocMiasto_Focused nie jest ju¿ wywo³ywana przez Frame z TapGestureRecognizer,
     // wiêc mo¿esz j¹ usun¹æ, chyba ¿e masz inne elementy, które jej u¿ywaj¹.
     // private void LocMiasto_Focused(object sender, EventArgs e)
