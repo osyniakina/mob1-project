@@ -30,28 +30,20 @@
 
         <Border Grid.Row="1"
                 StrokeShape="RoundRectangle 10" Stroke="Transparent" BackgroundColor="White"
-                Padding="0"
-                Margin="20, 15, 20, 0" HeightRequest="50"> <Grid ColumnDefinitions="*, Auto">
+                Padding="5, 5, 5, 10"
+                Margin="20, 15, 20, 0" HeightRequest="50"> <Grid ColumnDefinitions="*">
 
-                <SearchBar x:Name="InpSzukajRest"
+                <SearchBar x:Name="searchBar"
                        Grid.Column="0"
                        Placeholder="Wyszukaj restaurację..."
                        TextColor="Black"
                        PlaceholderColor="Gray"
-                       Margin="10,0,0,0"
                        VerticalOptions="Center"
-                       ClearButtonVisibility="WhileEditing"/>
+                       TextChanged="searchBar_TextChanged"
+                       />
 
                  
-                <ImageButton x:Name="BtnSzukajRest"
-                             Grid.Column="1"
-                             Source="search.png"
-                             BackgroundColor="Transparent"
-                             WidthRequest="30"
-                             HeightRequest="30"
-                             Margin="0,0,10,0"
-                             VerticalOptions="Center"
-                             Clicked="BtnSzukajRest_Clicked"/>
+                
             </Grid>
         </Border>
 
