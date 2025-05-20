@@ -27,14 +27,4 @@ public partial class LocPage : ContentPage
             await Navigation.PushAsync(new RestMainPage(wybraneMiasto));
         }
     }
-    // Metoda LocMiasto_Focused nie jest ju¿ wywo³ywana przez Frame z TapGestureRecognizer,
-    // wiêc mo¿esz j¹ usun¹æ, chyba ¿e masz inne elementy, które jej u¿ywaj¹.
-    // private void LocMiasto_Focused(object sender, EventArgs e)
-    // {
-    //     if (sender is Button focusedButton)
-    //     {
-    //         focusedButton.TextColor = Colors.Black;
-    //         focusedButton.BackgroundColor = Colors.White;
-    //     }
-    // }
 }

@@ -32,14 +32,18 @@
                 StrokeShape="RoundRectangle 10" Stroke="Transparent" BackgroundColor="White"
                 Padding="0"
                 Margin="20, 15, 20, 0" HeightRequest="50"> <Grid ColumnDefinitions="*, Auto">
-                <Entry x:Name="InpSzukajRest"
+
+                <SearchBar x:Name="InpSzukajRest"
                        Grid.Column="0"
                        Placeholder="Wyszukaj restaurację..."
                        TextColor="Black"
                        PlaceholderColor="Gray"
                        Margin="10,0,0,0"
                        VerticalOptions="Center"
-                       ClearButtonVisibility="WhileEditing"/> <ImageButton x:Name="BtnSzukajRest"
+                       ClearButtonVisibility="WhileEditing"/>
+
+                 
+                <ImageButton x:Name="BtnSzukajRest"
                              Grid.Column="1"
                              Source="search.png"
                              BackgroundColor="Transparent"
