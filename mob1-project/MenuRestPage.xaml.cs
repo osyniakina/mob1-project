@@ -17,7 +17,7 @@ namespace mob1_project
     {
         private DBHelper _databaseHelper;
         private Restauracja _rest;
-        private Dictionary<int, int> ilosciWybranych = new Dictionary<int, int>();   // przechowuje: id_dania, ilość
+        public Dictionary<int, int> ilosciWybranych = new Dictionary<int, int>();   // przechowuje: id_dania, ilość
         public float koszykCena = 0f;
         private readonly Dictionary<int, string> nazwyKategorii = new()
         {
@@ -192,7 +192,7 @@ namespace mob1_project
                         HorizontalTextAlignment = TextAlignment.Center,
                         WidthRequest = 30,
                         VerticalOptions = LayoutOptions.Center,
-                        Margin = new Thickness(0, 0, 0, 20) // <-- margines dolny 15
+                        Margin = new Thickness(0, 0, 0, 20) 
                     };
                     Grid.SetColumn(labelIlosc, 3);
                     priceQuantityLayout.Children.Add(labelIlosc);
@@ -200,7 +200,7 @@ namespace mob1_project
                     var buttonMinus = new Button
                     {
                         Text = "-",
-                        BackgroundColor = Color.FromHex("#FFA500"),
+                        BackgroundColor = Color.FromArgb("#FFA500"),
                         TextColor = Colors.White,
                         Padding = new Thickness(0),
                         WidthRequest = 30,
@@ -229,7 +229,7 @@ namespace mob1_project
                     var buttonPlus = new Button
                     {
                         Text = "+",
-                        BackgroundColor = Color.FromHex("#FFA500"),
+                        BackgroundColor = Color.FromArgb("#FFA500"),
                         TextColor = Colors.White,
                         Padding = new Thickness(0),
                         WidthRequest = 30,
@@ -269,7 +269,14 @@ namespace mob1_project
 
         private async void koszykButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new KoszykMainPage());
+            if(koszykCena > 0)
+            {
+                await Navigation.PushAsync(new KoszykMainPage(ilosciWybranych, koszykCena));
+            }
+            else
+            {
+                await DisplayAlert("Najpierw wybierz produkt!", "Koszyk narazie jest pusty", "OK");
+            }
         }
     }
 
