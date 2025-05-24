@@ -5,18 +5,18 @@
              Title="KategoriePage">
     <Grid RowDefinitions="Auto,*">
 
-        <Grid Grid.Row="0" BackgroundColor="#5e35b1" Padding="15">
+        <Grid Grid.Row="0" BackgroundColor="#FFA500" Padding="15">
             <Label
                 Text="Wybierz kategorię:"
                 VerticalOptions="Center"
-                FontFamily="Pacifico-Regular"
+                FontFamily="PlaywriteHU-Regular"
                 FontAttributes="Bold"
                 FontSize="Large"
                 HorizontalOptions="Center"
-                TextColor="#ffffff"/>
+                TextColor="Black"/>
         </Grid>
 
-        <ScrollView Grid.Row="1" BackgroundColor="#ede7f6">
+        <ScrollView Grid.Row="1" BackgroundColor="#FFA500">
             <VerticalStackLayout Spacing="15" Padding="15">
 
                 <Frame CornerRadius="15"
@@ -30,12 +30,13 @@
                         <TapGestureRecognizer Tapped="BtnKatAmerykanska_Clicked"/>
                     </Frame.GestureRecognizers>
                     <StackLayout>
-                        <Image Source="bialystok.jpg"
+                        <Image Source="amerykanska.jpg"
                                Aspect="AspectFill"
-                               HeightRequest="420"
-                               WidthRequest="500"
-                               Margin="0,25,0,0"/>
+                               HeightRequest="320"
+                               VerticalOptions="Start"
+                               Margin="0,0,0,0"/>
                         <Label Text="Amerykańska"
+                               FontFamily="PlaywriteHU-Regular"
                                FontSize="Medium"
                                FontAttributes="Bold"
                                HorizontalOptions="Center"
@@ -55,12 +56,13 @@
                         <TapGestureRecognizer Tapped="BtnKatWloska_Clicked"/>
                     </Frame.GestureRecognizers>
                     <StackLayout>
-                        <Image Source="bialystok.jpg"
+                        <Image Source="wloska.jpg"
                                Aspect="AspectFill"
-                               HeightRequest="420"
-                               WidthRequest="500"
-                               Margin="0,25,0,0"/>
+                               HeightRequest="320"
+                               VerticalOptions="Start"
+                               Margin="0,0,0,0"/>
                         <Label Text="Włoska"
+                               FontFamily="PlaywriteHU-Regular"
                                FontSize="Medium"
                                FontAttributes="Bold"
                                HorizontalOptions="Center"
@@ -80,12 +82,13 @@
                         <TapGestureRecognizer Tapped="BtnKatAzjatycka_Clicked"/>
                     </Frame.GestureRecognizers>
                     <StackLayout>
-                        <Image Source="bialystok.jpg"
-                               Aspect="AspectFill"
-                               HeightRequest="420"
-                               WidthRequest="500"
-                               Margin="0,25,0,0"/>
+                        <Image Source="azjatycka.jpg"
+                              Aspect="AspectFill"
+                               HeightRequest="320"
+                               VerticalOptions="Start"
+                               Margin="0,0,0,0"/>
                         <Label Text="Azjatycka"
+                               FontFamily="PlaywriteHU-Regular"
                                FontSize="Medium"
                                FontAttributes="Bold"
                                HorizontalOptions="Center"
@@ -105,12 +108,13 @@
                         <TapGestureRecognizer Tapped="BtnKatEuropejska_Clicked"/>
                     </Frame.GestureRecognizers>
                     <StackLayout>
-                        <Image Source="bialystok.jpg"
+                        <Image Source="europejska.jpg"
                                Aspect="AspectFill"
-                               HeightRequest="420"
-                               WidthRequest="500"
-                               Margin="0,25,0,0"/>
+                               HeightRequest="320"
+                               VerticalOptions="Start"
+                               Margin="0,0,0,0"/>
                         <Label Text="Europejska"
+                               FontFamily="PlaywriteHU-Regular"
                                FontSize="Medium"
                                FontAttributes="Bold"
                                HorizontalOptions="Center"

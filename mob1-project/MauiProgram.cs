@@ -14,6 +14,7 @@ namespace mob1_project
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                     fonts.AddFont("Pacifico-Regular.ttf", "PacificoRegular"); // Dodano czcionkę Pacifico
+                    fonts.AddFont("PlaywriteHU-Regular.ttf", "PlaywriteHU-Regular");
                 });
 
 #if DEBUG

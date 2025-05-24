@@ -18,7 +18,7 @@ public partial class RestMainPage : ContentPage
         {
             if (value is string categoryName)
             {
-                return $"Images/Kategorie/{categoryName}.jpg";
+                return $"{categoryName}.jpg";
             }
             return null;
         }

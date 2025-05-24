@@ -3,12 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="mob1_project.StwKontoPage"
              Title="Stwórz konto"
-             BackgroundColor="#F4FAFF">
+             BackgroundColor="#F2F0EB">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="InputFrame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="#FFFFFF" />
+                <Setter Property="CornerRadius" Value="15" />
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="HasShadow" Value="True" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <Grid RowDefinitions="*, Auto">
 
         <VerticalStackLayout Grid.Row="0"
-                             Padding="30,0,30,0"
+                             Padding="0,0,0,120"
                              HorizontalOptions="Center">
             <Image
                 Source="smaczne.png"
@@ -18,10 +28,7 @@
                 SemanticProperties.Description="Logo aplikacji" />
 
             <Label
-                Text="Wybierz, zamów, delektuj się, a my zajmiemy się wszystkim."
-                FontSize="30"
-                FontFamily="Pacifico-Regular"
-                FontAttributes="Bold"
+                Text="Wybierz, zamów, delektuj się,&#x0a; a my zajmiemy się wszystkim." FontSize="25" FontFamily="Pacifico-Regular"
                 TextColor="#494744"
                 HorizontalOptions="Center"
                 Margin="50,-40,50,0"
@@ -29,8 +36,7 @@
         </VerticalStackLayout>
 
         <Frame Grid.Row="1"
-               BackgroundColor="#F0FFF1"
-               CornerRadius="25"
+               BackgroundColor="#ffda46" CornerRadius="25"
                Padding="50"
                VerticalOptions="End"
                Margin="0,0,0,-10"
@@ -65,8 +71,7 @@
                 <Button x:Name="StwBtn"
                         Text="Stwórz konto"
                         Clicked="StwBtn_Clicked"
-                        BackgroundColor="#506b4d"
-                        TextColor="White"
+                        BackgroundColor="#FFA500" TextColor="White"
                         FontAttributes="Bold"
                         CornerRadius="10"
                         Padding="15"
@@ -75,8 +80,7 @@
                 <Button x:Name="ZalBtn"
                         Text="Masz już konto? Zaloguj się"
                         Clicked="ZalBtn_Clicked"
-                        TextColor="#506b4d"
-                        BackgroundColor="Transparent"
+                        TextColor="#FFA500" BackgroundColor="Transparent"
                         HorizontalOptions="Center"
                         FontSize="Small" />
             </VerticalStackLayout>

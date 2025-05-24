@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="mob1_project.MainPage"
-             BackgroundColor="#F4FAFF">
+             BackgroundColor="#F2F0EB">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="InputFrame" TargetType="Frame">
@@ -17,26 +17,25 @@
     <Grid RowDefinitions="*, Auto">
 
         <VerticalStackLayout Grid.Row="0"
-                             Padding="30,0,30,0"
+                             Padding="0,0,0,110"
                              HorizontalOptions="Center">
             <Image
                 Source="smaczne.png"
-                HeightRequest="350"
+                HeightRequest="300"
                 Aspect="AspectFit"
                 SemanticProperties.Description="Logo aplikacji" />
 
             <Label
-                Text="Wybierz, zamów, delektuj się, a my zajmiemy się wszystkim."
-                FontSize="30"
+                Text="Wybierz, zamów, delektuj się,&#x0a; a my zajmiemy się wszystkim."
+                FontSize="25"
                 FontFamily="Pacifico-Regular"
-                FontAttributes="Bold"
                 TextColor="#494744"
                 HorizontalOptions="Center"
                 Margin="50,0,50,0" />
         </VerticalStackLayout>
 
         <Frame Grid.Row="1"
-               BackgroundColor="#F0FFF1"
+               BackgroundColor="#ffda46"
                CornerRadius="25"
                Padding="50"
                VerticalOptions="End"
@@ -61,7 +60,7 @@
                 <Button x:Name="ZalogBtn"
                         Text="Zaloguj"
                         Clicked="ZalogBtnClicked"
-                        BackgroundColor="#506b4d"
+                        BackgroundColor="#FFA500"
                         TextColor="White"
                         FontAttributes="Bold"
                         CornerRadius="10"
@@ -71,7 +70,7 @@
                 <Button x:Name="UtwKontBtn"
                         Text="Stwórz konto"
                         Clicked="UtwKontBtn_Clicked"
-                        TextColor="#506b4d"
+                        TextColor="#FFA500"
                         BackgroundColor="Transparent"
                         HorizontalOptions="Center"
                         FontSize="Small" />

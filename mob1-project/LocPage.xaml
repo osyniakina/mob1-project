@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="mob1_project.LocPage"
              Title="Wybierz swoje miasto">
-    <ScrollView BackgroundColor="#ff6600">
+    <ScrollView BackgroundColor="#FFA500">
         <VerticalStackLayout Spacing="15" Padding="15">
             <Image
                 Source="smaczipozio1.png"
@@ -27,7 +27,7 @@
                    Padding="0"
                    Margin="20,0,20,0"
                    BackgroundColor="White"
-                   BorderColor="Gray"
+                   BorderColor="SlateGray"
                    HorizontalOptions="Fill">
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Tapped="LocMiasto_Clicked" CommandParameter="Warszawa"/>
@@ -51,7 +51,7 @@
                    Padding="0"
                    Margin="20,0,20,0"
                    BackgroundColor="White"
-                   BorderColor="Gray"
+                   BorderColor="SlateGray"
                    HorizontalOptions="Fill">
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Tapped="LocMiasto_Clicked" CommandParameter="Bialystok"/>
@@ -75,7 +75,7 @@
                    Padding="0"
                    Margin="20,0,20,20"
                    BackgroundColor="White"
-                   BorderColor="Gray"
+                   BorderColor="SlateGray"
                    HorizontalOptions="Fill">
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Tapped="LocMiasto_Clicked" CommandParameter="Lublin"/>
