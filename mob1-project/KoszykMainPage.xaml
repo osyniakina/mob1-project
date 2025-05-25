@@ -2,45 +2,97 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="mob1_project.KoszykMainPage"
-             Title="KoszykMainPage">
-    <Grid RowDefinitions="Auto, *, Auto">
-        <VerticalStackLayout Grid.Row="0">
-            
-            <Label 
-                Text="Koszyk:" TextColor="Black"
-                VerticalOptions="Center" FontSize="Large"
-                HorizontalOptions="Center" />
-            
-        </VerticalStackLayout>
+             Title="Koszyk"
+             BackgroundColor="#F2F0EB">
 
-        <ScrollView x:Name="scrollView" Grid.Row="1" Margin="5, 10, 5, 10"
-            VerticalOptions="FillAndExpand" 
->
-            <VerticalStackLayout x:Name="koszykLayout" HorizontalOptions="CenterAndExpand" />
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="CardFrame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="Padding" Value="15" />
+                <Setter Property="Margin" Value="0,10" />
+                <Setter Property="HasShadow" Value="True" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto, Auto, *, Auto">
+
+        <Grid Grid.Row="0"
+              BackgroundColor="#FFA500"
+              Padding="15, 10, 15, 10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0"
+                   Source="smaczipozio1.png"
+                   HeightRequest="50"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   Margin="0" />
+
+            <Button Text="Wróć"
+                    Grid.Column="1"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    HeightRequest="40"
+                    WidthRequest="80"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    Clicked="BackToMenu_Clicked" />
+        </Grid>
+
+        <Border Grid.Row="1"
+                Stroke="Transparent"
+                BackgroundColor="White"
+                StrokeShape="RoundRectangle 10"
+                Margin="20, 15, 20, 0"
+                Padding="10,5">
+            <Label Text="Twój Koszyk"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="#494744"
+                   HorizontalOptions="Center" />
+        </Border>
+
+        <ScrollView Grid.Row="2"
+                    Padding="20,10"
+                    BackgroundColor="#F2F0EB">
+            <VerticalStackLayout x:Name="koszykLayout"
+                                 Spacing="10"
+                                 Padding="0" />
         </ScrollView>
 
-        <VerticalStackLayout Grid.Row="2" Padding="15, 4, 15, 15">
-            <Grid RowDefinitions="Auto, Auto">
-                <Label 
-                    Text="Razem: "  x:Name="razem"
-                    VerticalOptions="Center" Grid.Row="0"
-                    HorizontalOptions="CenterAndExpand" />
+        <VerticalStackLayout Grid.Row="3"
+                             Spacing="15"
+                             Padding="20"
+                             BackgroundColor="#F2F0EB">
 
-                <Button  x:Name="zamButton"
-                    Text="Przejdz do zamówienia"
-                    VerticalOptions="End"
-                    Clicked="zamButton_Clicked"
-                    TextColor="White"
-                    Grid.Row="1"
-                    FontSize="Large"
-                    BackgroundColor="#39962a"
+            <Frame Style="{StaticResource CardFrame}">
+                <Label x:Name="razem"
+                       Text="Razem: "
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="#333333"
+                       HorizontalOptions="Center" />
+            </Frame>
+
+            <Button x:Name="zamButton"
+                    Text="Przejdź do zamówienia"
+                    FontSize="18"
                     FontAttributes="Bold"
-                    HorizontalOptions="Fill" />
-            </Grid>
-
-            
+                    TextColor="White"
+                    BackgroundColor="#FFA500"
+                    CornerRadius="12"
+                    Padding="15"
+                    Clicked="zamButton_Clicked"
+                    HorizontalOptions="Fill"
+                    HeightRequest="50" />
         </VerticalStackLayout>
-
     </Grid>
-    
 </ContentPage>
