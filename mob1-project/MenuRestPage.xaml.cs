@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Graphics;
-using Microsoft.Maui.Controls.Shapes; // Dodano dla RoundRectangle i Border
-// Dodaj tutaj inne usingi, które były w Twoim oryginalnym kodzie, np. dla DBHelper i modeli danych (Restauracja, Danie)
-// Upewnij się, że przestrzenie nazw dla Twoich modeli i pomocników są tutaj uwzględnione
-// using TwojaNazwaProjektu.Models;
-// using TwojaNazwaProjektu.Helpers;
+using Microsoft.Maui.Controls.Shapes;
 
 namespace mob1_project
 {
@@ -192,7 +186,7 @@ namespace mob1_project
                         HorizontalTextAlignment = TextAlignment.Center,
                         WidthRequest = 30,
                         VerticalOptions = LayoutOptions.Center,
-                        Margin = new Thickness(0, 0, 0, 20) 
+                        Margin = new Thickness(0, 0, 0, 20)
                     };
                     Grid.SetColumn(labelIlosc, 3);
                     priceQuantityLayout.Children.Add(labelIlosc);
@@ -269,20 +263,14 @@ namespace mob1_project
 
         private async void koszykButton_Clicked(object sender, EventArgs e)
         {
-            if(koszykCena > 0)
+            if (koszykCena > 0)
             {
-                await Navigation.PushAsync(new KoszykMainPage(ilosciWybranych, koszykCena));
+                await Navigation.PushAsync(new KoszykMainPage(ilosciWybranych, koszykCena, _rest));
             }
             else
             {
-                await DisplayAlert("Najpierw wybierz produkt!", "Koszyk narazie jest pusty", "OK");
+                await DisplayAlert("Najpierw wybierz produkt!", "Koszyk na razie jest pusty", "OK");
             }
         }
     }
-
-    // Przykładowe klasy (dopasuj do projektu):
-    // public class DBHelper { public Task<List<Danie>> GetDaniaAsync() => Task.FromResult(new List<Danie>()); }
-    // public class Restauracja { public string Nazwa { get; set; } public string CzasPracy { get; set; } }
-    // public class Danie { public int Id { get; set; } public string Nazwa { get; set; } public double Cena { get; set; } public int Kategoria { get; set; } public string Restauracja { get; set; } }
-    // public class KoszykMainPage : ContentPage { /* ... */ }
 }

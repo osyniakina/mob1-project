@@ -1,46 +1,56 @@
-﻿namespace mob1_project;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using mob1_project;
+using mob1_project.Pages;
+using Microsoft.Maui.Controls;
 
-public partial class KoszykMainPage : ContentPage
+namespace mob1_project
 {
-    private DBHelper _databaseHelper;
-    private Dictionary<int, int> _ilosciWybranych;
-    private float _koszykCena;
-    
-
-    public KoszykMainPage(Dictionary<int, int> ilosciWybranych, float koszykCena)
+    public partial class KoszykMainPage : ContentPage
     {
-        InitializeComponent();
-        _databaseHelper = new DBHelper();
-        _ilosciWybranych = ilosciWybranych;
-        _koszykCena = koszykCena;
-        
-    }
+        private DBHelper _databaseHelper;
+        private Dictionary<int, int> _ilosciWybranych;
+        private float _koszykCena;
+        private Restauracja _restauracja;   // dodajemy obiekt restauracji
 
-    protected override async void OnAppearing()
-    {
-        base.OnAppearing();
-
-        var dania = await _databaseHelper.GetDaniaAsync();
-
-
-        foreach (var kvp in _ilosciWybranych.Where(kvp => kvp.Value > 0))    //koszykWybraneProdukty
+        // Dodajemy parametr Restauracja do konstruktora
+        public KoszykMainPage(Dictionary<int, int> ilosciWybranych, float koszykCena, Restauracja restauracja)
         {
-            var danie = dania.FirstOrDefault(d => d.Id == kvp.Key);
-            if (danie != null)
-            {
-                var label = new Label
-                {
-                    Text = $"{danie.Nazwa}       x  {kvp.Value}        {(kvp.Value * danie.Cena):F2} zł"
-                };
-                koszykLayout.Children.Add(label); 
-            }
+            InitializeComponent();
+            _databaseHelper = new DBHelper();
+            _ilosciWybranych = ilosciWybranych;
+            _koszykCena = koszykCena;
+            _restauracja = restauracja;  // przypisujemy restaurację
         }
 
-        razem.Text = $"Razem: {_koszykCena:F2} zł"; 
-    }
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
 
-    private void zamButton_Clicked(object sender, EventArgs e)
-    {
+            var dania = await _databaseHelper.GetDaniaAsync();
 
+            foreach (var kvp in _ilosciWybranych.Where(kvp => kvp.Value > 0))    //koszykWybraneProdukty
+            {
+                var danie = dania.FirstOrDefault(d => d.Id == kvp.Key);
+                if (danie != null)
+                {
+                    var label = new Label
+                    {
+                        Text = $"{danie.Nazwa}       x  {kvp.Value}        {(kvp.Value * danie.Cena):F2} zł"
+                    };
+                    koszykLayout.Children.Add(label);
+                }
+            }
+
+            razem.Text = $"Razem: {_koszykCena:F2} zł";
+        }
+
+        private async void zamButton_Clicked(object sender, EventArgs e)
+        {
+            // Teraz przekazujemy obiekt restauracji do strony podsumowania
+            await Navigation.PushAsync(new OrderConfirmationPage(_restauracja));
+        }
     }
 }
